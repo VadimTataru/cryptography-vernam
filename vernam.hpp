@@ -8,10 +8,10 @@
 #ifndef vernam_hpp
 #define vernam_hpp
 
-#endif /* vernam_hpp */
-
 char* get_message();
 
 char* get_key(int size);
 
 char* encrypt(char *message, char *key);
+
+#endif /* vernam_hpp */

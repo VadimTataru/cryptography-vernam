@@ -14,6 +14,7 @@
 char* get_message() {
     std::string message;
     std::cout << "Enter message to crypt (In English)" << std::endl;
+    std::cin.sync();
     std::getline(std::cin, message);
     std::cout << std::endl;
     return message.data();
