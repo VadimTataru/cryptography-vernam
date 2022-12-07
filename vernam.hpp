@@ -7,11 +7,15 @@
 
 #ifndef vernam_hpp
 #define vernam_hpp
+#include <stdlib.h>
+#include <cstddef>
+#include <cstring>
+#include <iostream>
 
-char* get_message();
+std::string get_message();
 
 char* get_key(int size);
 
-char* encrypt(char *message, char *key);
+char* encrypt(char *message, char *key, int size);
 
 #endif /* vernam_hpp */

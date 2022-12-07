@@ -13,16 +13,21 @@
 
 int main(int argc, char const *argv[])
 {
-    char *message = get_message();
-    std::cout << std::endl << "Message is: " << message;
+    int len;
+    std::string message = get_message();
+    len = message.length();
+    std::cout << std::endl << "Message is: " << message << "With size " << len;
 
-    char *key = get_key(sizeof(message));
+    char mes[len];
+    memcpy(mes, message.data(), len);
+
+    char *key = get_key(len);
     std::cout << std::endl << "Key is: " << key;
 
-    char *encrypted_message = encrypt(message, key);
+    char *encrypted_message = encrypt(mes, key, len);
     std::cout << std::endl << "Encrypted message is: " << encrypted_message;
 
-    char *decrypted_message = encrypt(encrypted_message, key);
+    char *decrypted_message = encrypt(encrypted_message, key, len);
     std::cout << std::endl << "Decrypted message is: " << decrypted_message;
 
     std::cout << std::endl << "You can close the program now! Press any key!";
